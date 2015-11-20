@@ -1,0 +1,33 @@
+
+AC_INIT([Zakuta], 0.1)
+AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_MACRO_DIR(m4)
+AM_INIT_AUTOMAKE
+AC_DEFINE([RELEASE], [0.9], [Alpha])
+
+AC_LANG_C
+AC_PROG_CC_C99
+AC_PROG_LIBTOOL
+
+AC_SUBST(INTI_CFLAGS)
+AC_SUBST(INTI_LIBS)
+
+CFLAGS="$CFLAGS -Wall"
+CFLAGS="$CFLAGS -Wno-unused-parameter"
+CFLAGS="$CFLAGS -std=gnu99"
+
+# Check for libraries
+
+# Check for headers files
+
+# Check for typedef
+AC_C_INLINE
+AC_TYPE_PID_T
+AC_TYPE_SIZE_T
+AC_TYPE_UINT8_T
+AC_TYPE_UINT16_T
+AC_TYPE_INT32_T
+AC_TYPE_UINT32_T
+AC_TYPE_UINT64_T
+
+AC_OUTPUT(Makefile src/Makefile)
