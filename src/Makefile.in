@@ -104,7 +104,8 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_zakuta_OBJECTS = zakuta_main.$(OBJEXT)
+am_zakuta_OBJECTS = zakuta_main.$(OBJEXT) clo.$(OBJEXT) \
+	readpcap.$(OBJEXT)
 zakuta_OBJECTS = $(am_zakuta_OBJECTS)
 am__DEPENDENCIES_1 =
 zakuta_DEPENDENCIES = $(am__DEPENDENCIES_1)
@@ -294,7 +295,9 @@ top_srcdir = @top_srcdir@
 ACLOCAL_AMFLAGS = -I m4
 AM_CXXFLAGS = $(INTI_CFLAGS)
 zakuta_SOURCES = \
-    zakuta_main.c 
+    zakuta_main.c \
+    clo.c \
+    inputs/readpcap.c 
 
 zakuta_LDADD = $(INTI_LIBS)
 all: all-am
@@ -390,6 +393,8 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/clo.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/readpcap.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/zakuta_main.Po@am__quote@
 
 .c.o:
@@ -412,6 +417,20 @@ distclean-compile:
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LTCOMPILE) -c -o $@ $<
+
+readpcap.o: inputs/readpcap.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT readpcap.o -MD -MP -MF $(DEPDIR)/readpcap.Tpo -c -o readpcap.o `test -f 'inputs/readpcap.c' || echo '$(srcdir)/'`inputs/readpcap.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/readpcap.Tpo $(DEPDIR)/readpcap.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='inputs/readpcap.c' object='readpcap.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o readpcap.o `test -f 'inputs/readpcap.c' || echo '$(srcdir)/'`inputs/readpcap.c
+
+readpcap.obj: inputs/readpcap.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT readpcap.obj -MD -MP -MF $(DEPDIR)/readpcap.Tpo -c -o readpcap.obj `if test -f 'inputs/readpcap.c'; then $(CYGPATH_W) 'inputs/readpcap.c'; else $(CYGPATH_W) '$(srcdir)/inputs/readpcap.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/readpcap.Tpo $(DEPDIR)/readpcap.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='inputs/readpcap.c' object='readpcap.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o readpcap.obj `if test -f 'inputs/readpcap.c'; then $(CYGPATH_W) 'inputs/readpcap.c'; else $(CYGPATH_W) '$(srcdir)/inputs/readpcap.c'; fi`
 
 mostlyclean-libtool:
 	-rm -f *.lo

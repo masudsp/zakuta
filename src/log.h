@@ -10,7 +10,7 @@ enum {
 };
 
 #ifndef  LOG_LEVEL
-#define  LOG_LEVEL    3 /* by default Notice level */
+#define  LOG_LEVEL    5 /* default level */
 #endif
 
 #ifdef   _SYS_LOG_
@@ -21,34 +21,34 @@ enum {
 
 #define  log_crit(...)  fprintf(stderr, __VA_ARGS__);
 
-#ifdef   LOG_LEVEL > 0
+#if   LOG_LEVEL > 0
 #define  log_err(...)  fprintf(stderr, __VA_ARGS__);
 #else
 #define  log_err(...)  
 #endif
 
-#ifdef   LOG_LEVEL > 1
+#if   LOG_LEVEL > 1
 #define  log_warn(...)  fprintf(stderr, __VA_ARGS__);
 #else
-#define  log_err(...)  
+#define  log_warn(...)  
 #endif
 
-#ifdef   LOG_LEVEL > 2
+#if   LOG_LEVEL > 2
 #define  log_notice(...)  fprintf(stdout, __VA_ARGS__);
 #else
-#define  log_err(...)  
+#define  log_notice(...)  
 #endif
 
-#ifdef   LOG_LEVEL > 3
+#if   LOG_LEVEL > 3
 #define  log_info(...)  fprintf(stdout, __VA_ARGS__);
 #else
-#define  log_err(...)  
+#define  log_info(...)  
 #endif
 
-#ifdef   LOG_LEVEL > 4
+#if   LOG_LEVEL > 4
 #define  log_debug(...)  fprintf(stdout, __VA_ARGS__);
 #else
-#define  log_err(...)  
+#define  log_debug(...)  
 #endif
 
 #endif

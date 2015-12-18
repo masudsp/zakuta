@@ -1,5 +1,9 @@
 #include <getopt.h>
 
+#include "zakuta.h"
+#include "inputs/readpcap.h"
+
+
 #define     MAX_CLO       30
 
 enum {
@@ -8,7 +12,7 @@ enum {
     CLO_EXIT
 };
 
-typedef int (*clo_callback_t)(const char *optarg);
+typedef int (*clo_callback_t)(zakuta_conf_t *zkc, const char *optarg);
 
 typedef struct clo_info {
     /* short option */
@@ -31,6 +35,6 @@ void zk_clo_show(void);
 int zk_clo_register(char *long_opt, char opt, uint8_t has_arg,
                     char *desc, clo_callback_t clo_callback);
 
-int zk_clo_parse(int argc, char **argv);
+int zk_clo_parse(zakuta_conf_t *zkc, int argc, char **argv);
 
 

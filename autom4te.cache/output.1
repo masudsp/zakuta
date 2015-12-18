@@ -632,6 +632,8 @@ ac_subst_vars='am__EXEEXT_FALSE
 am__EXEEXT_TRUE
 LTLIBOBJS
 LIB@&t@OBJS
+INTI_LIBS
+INTI_CFLAGS
 CPP
 LT_SYS_LIBRARY_PATH
 OTOOL64
@@ -2911,7 +2913,10 @@ END
 fi
 
 
-$as_echo "@%:@define RELEASE 0.9" >>confdefs.h
+$as_echo "@%:@define RELEASE 0" >>confdefs.h
+
+
+$as_echo "@%:@define VERSION 1" >>confdefs.h
 
 
 ac_ext=c
@@ -12209,6 +12214,9 @@ CC=$lt_save_CC
 
 
 
+
+
+
 CFLAGS="$CFLAGS -Wall"
 CFLAGS="$CFLAGS -Wno-unused-parameter"
 CFLAGS="$CFLAGS -std=gnu99"
@@ -12348,7 +12356,7 @@ _ACEOF
   esac
 
 
-ac_config_files="$ac_config_files Makefile"
+ac_config_files="$ac_config_files Makefile src/Makefile"
 
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
@@ -13362,6 +13370,7 @@ do
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
     "libtool") CONFIG_COMMANDS="$CONFIG_COMMANDS libtool" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
+    "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
 
   *) as_fn_error $? "invalid argument: \`$ac_config_target'" "$LINENO" 5;;
   esac

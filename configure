@@ -2913,7 +2913,10 @@ END
 fi
 
 
-$as_echo "#define RELEASE 0.9" >>confdefs.h
+$as_echo "#define RELEASE 0" >>confdefs.h
+
+
+$as_echo "#define VERSION 1" >>confdefs.h
 
 
 ac_ext=c

@@ -1,3 +1,3 @@
 
-int zakuta_clo_reigtser(void);
+int zakuta_clo_register(void);
 

@@ -60,7 +60,7 @@
 /* Define to 1 if you have the ANSI C header files. */
 #undef STDC_HEADERS
 
-/* Version number of package */
+/* Planning */
 #undef VERSION
 
 /* Define for Solaris 2.5.1 so the uint32_t typedef from <sys/synch.h>,
